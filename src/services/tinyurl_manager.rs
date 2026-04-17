@@ -4,6 +4,7 @@ use crate::models::Tinyurl;
 use crate::utils::ShortUrlUtil;
 use sqlx::MySqlPool;
 
+#[derive(Clone)]
 pub struct TinyurlManager;
 
 impl TinyurlManager {

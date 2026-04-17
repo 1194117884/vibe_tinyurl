@@ -6,6 +6,7 @@ use redis::{AsyncCommands, Client};
 use sqlx::MySqlPool;
 use std::sync::Arc;
 
+#[derive(Clone)]
 pub struct TinyurlService {
     pool: MySqlPool,
     redis: Arc<Client>,
@@ -101,7 +102,7 @@ impl TinyurlService {
         let mut conn = self.redis.get_multiplexed_async_connection().await?;
 
         // Store just the origin URL for simplicity
-        conn.set(&cache_key, &tinyurl.origin_url).await?;
+        conn.set::<_, _, ()>(&cache_key, &tinyurl.origin_url).await?;
 
         Ok(())
     }

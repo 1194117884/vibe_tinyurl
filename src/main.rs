@@ -1,5 +1,11 @@
 mod config;
+mod db;
+mod error;
+mod models;
+mod routes;
+mod services;
 mod utils;
+mod middleware;
 use config::CONFIG;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 
