@@ -1,4 +1,15 @@
+mod config;
+use config::CONFIG;
+use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
+
 #[tokio::main]
 async fn main() {
-    println!("Vibe TinyURL starting...");
+    tracing_subscriber::registry()
+        .with(
+            tracing_subscriber::EnvFilter::try_from_default_env()
+                .unwrap_or_else(|_| "info".into()),
+        )
+        .with(tracing_subscriber::fmt::layer())
+        .init();
+    tracing::info!("Vibe TinyURL starting on port {}", CONFIG.server_port);
 }
