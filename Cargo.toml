@@ -20,3 +20,7 @@ tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 dotenvy = "0.15"
 once_cell = "1.19"
 rand = "0.8"
+
+[lib]
+name = "vibe_tinyurl"
+path = "src/lib.rs"
