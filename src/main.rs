@@ -1,4 +1,5 @@
 mod config;
+mod utils;
 use config::CONFIG;
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt};
 
