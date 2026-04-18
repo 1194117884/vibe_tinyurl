@@ -36,7 +36,7 @@ cargo run
 
 ### Create Short URL (Internal)
 ```bash
-POST /api/inner/tinyurl/create
+POST /create
 Header: apiKey: your_api_key
 Body: {"url": "https://example.com", "len": 6}
 
@@ -45,7 +45,7 @@ Response: {"code": "0", "message": "成功", "data": "shortUri"}
 
 ### Visit Short URL (Public)
 ```bash
-GET /api/open/tinyurl/visit/{shortUri}
+GET /visit/{shortUri}
 
 Response: {"code": "0", "message": "成功", "data": "https://example.com"}
 Response Header: origin-url: https://example.com
@@ -59,7 +59,7 @@ GET /{shortUri}
 
 ### Cache Refresh (Internal)
 ```bash
-POST /api/inner/tinyurl/cache/refresh
+POST /cache/refresh
 Header: apiKey: your_api_key
 Body: {"short_uri": "abc123"}
 
@@ -98,7 +98,6 @@ src/
 ├── services/         # Business logic
 ├── routes/           # HTTP handlers
 ├── utils/            # Base62 encoding
-└── middleware/       # Authentication
 ```
 
 ## Testing
