@@ -28,7 +28,7 @@ cargo run
 |----------|-------------|---------|
 | DATABASE_URL | MySQL connection string | - |
 | REDIS_URL | Redis connection string | - |
-| TINYURL_FORMAT | Short URL format | `https://t.cn/%s` |
+| TINYURL_FORMAT | Short URL format | `https://example.com/%s` |
 | SERVER_PORT | HTTP server port | 3000 |
 | RUST_LOG | Log level | info |
 

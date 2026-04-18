@@ -18,7 +18,7 @@ impl Config {
         Self {
             database_url: env::var("DATABASE_URL").expect("DATABASE_URL must be set"),
             redis_url: env::var("REDIS_URL").expect("REDIS_URL must be set"),
-            tinyurl_format: env::var("TINYURL_FORMAT").unwrap_or_else(|_| "https://t.cn/%s".to_string()),
+            tinyurl_format: env::var("TINYURL_FORMAT").unwrap_or_else(|_| "https://example.com/%s".to_string()),
             server_port: env::var("SERVER_PORT")
                 .ok()
                 .and_then(|s| s.parse().ok())
