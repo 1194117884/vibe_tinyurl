@@ -1,7 +1,6 @@
 mod config;
 mod db;
 mod error;
-mod middleware;
 mod models;
 mod routes;
 mod services;

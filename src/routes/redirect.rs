@@ -10,7 +10,7 @@ use crate::error::AppError;
 
 pub fn routes() -> Router<AppState> {
     Router::new()
-        .route("/{short_uri}", get(redirect))
+        .route("/:short_uri", get(redirect))
 }
 
 async fn redirect(

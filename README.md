@@ -76,7 +76,7 @@ The service uses 6 sharded tables based on short URL length:
 
 Each table has: `id`, `short_uri`, `origin_url`, `create_time`, `user_id`
 
-Also requires a `users` table with: `id`, `name`, `api_key`, `created_at`
+Also requires a `users` table with: `id`, `name`, `api_key`, `create_time`
 
 ## Architecture
 

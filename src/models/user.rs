@@ -7,5 +7,5 @@ pub struct User {
     pub id: i64,
     pub name: String,
     pub api_key: String,
-    pub created_at: DateTime<Utc>,
+    pub create_time: DateTime<Utc>,
 }

@@ -17,7 +17,7 @@ fn table_name(length: i32) -> &'static str {
 /// Find user by API key
 pub async fn find_user_by_api_key(pool: &MySqlPool, api_key: &str) -> Result<Option<User>, sqlx::Error> {
     sqlx::query_as::<_, User>(
-        "SELECT id, name, api_key, created_at FROM users WHERE api_key = ?"
+        "SELECT id, name, api_key, create_time FROM users WHERE api_key = ?"
     )
     .bind(api_key)
     .fetch_optional(pool)

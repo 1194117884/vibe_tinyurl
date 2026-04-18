@@ -12,7 +12,7 @@ use crate::error::AppError;
 
 pub fn routes() -> Router<AppState> {
     Router::new()
-        .route("/api/open/tinyurl/visit/{short_uri}", get(visit))
+        .route("/visit/:short_uri", get(visit))
 }
 
 async fn visit(
